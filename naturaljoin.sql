@@ -11,6 +11,7 @@ mysql> select * from oder1 NATURAL JOIN products;
 | A08      | meesho     | q17         | dakshayani    | 2017-05-06 | lipliner     | P07        |
 +----------+------------+-------------+---------------+------------+--------------+------------+
 -----------+-------------+---------------+------------+------------' at line 1
+  VIEW LEVEL!!!!
 mysql> create view productsview as select order_id,product_name from products;
 Query OK, 0 rows affected (0.16 sec)
 mysql>  select * from productsview;
