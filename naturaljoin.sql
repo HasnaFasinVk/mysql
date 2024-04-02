@@ -10,3 +10,19 @@ mysql> select * from oder1 NATURAL JOIN products;
 | A06      | nykaa      | q16         | ponnu         | 2017-05-06 | lipmask      | P06        |
 | A08      | meesho     | q17         | dakshayani    | 2017-05-06 | lipliner     | P07        |
 +----------+------------+-------------+---------------+------------+--------------+------------+
+-----------+-------------+---------------+------------+------------' at line 1
+mysql> create view productsview as select order_id,product_name from products;
+Query OK, 0 rows affected (0.16 sec)
+mysql>  select * from productsview;
++----------+--------------+
+| order_id | product_name |
++----------+--------------+
+| A01      | lipstick     |
+| A02      | lipbalm      |
+| A03      | lipgloss     |
+| A04      | liptint      |
+| A05      | lipcare      |
+| A06      | lipmask      |
+| A08      | lipliner     |
++----------+--------------+
+7 rows in set (0.02 sec)
