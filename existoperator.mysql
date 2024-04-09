@@ -1,0 +1,38 @@
+mysql> select * from oder1;
++----------+------------+-------------+---------------+------------+
+| order_id | order_name | customer_id | customer_name | orderdate  |
++----------+------------+-------------+---------------+------------+
+| A01      | myntra     | q11         | shakuntala    | 2011-02-01 |
+| A02      | ajio       | q12         | meenakshi     | 2011-08-01 |
+| A03      | foxtale    | q13         | chinnammu     | 2011-09-06 |
+| A04      | dotkey     | q14         | surabhi       | 2011-04-06 |
+| A05      | drsheths   | q15         | kulsummu      | 2012-04-06 |
+| A06      | nykaa      | q16         | ponnu         | 2017-05-06 |
+| A08      | meesho     | q17         | dakshayani    | 2017-05-06 |
++----------+------------+-------------+---------------+------------+
+7 rows in set (0.00 sec)
+mysql> select * from products;
++--------------+------------+----------+
+| product_name | product_id | order_id |
++--------------+------------+----------+
+| lipstick     | P01        | A01      |
+| lipbalm      | P02        | A02      |
+| lipgloss     | P03        | A03      |
+| liptint      | P04        | A04      |
+| lipcare      | P05        | A05      |
+| lipmask      | P06        | A06      |
+| lipliner     | P07        | A08      |
++--------------+------------+----------+
+mysql> select order_id,order_name from oder1 O where exists(select * from products P where P.order_id=O.order_id);
++----------+------------+
+| order_id | order_name |
++----------+------------+
+| A01      | myntra     |
+| A02      | ajio       |
+| A03      | foxtale    |
+| A04      | dotkey     |
+| A05      | drsheths   |
+| A06      | nykaa      |
+| A08      | meesho     |
++----------+------------+
+7 rows in set (0.04 sec)
